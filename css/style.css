@@ -1,7 +1,13 @@
+/* ********** RESET ********** */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ********** GENERAL ********** */
+body {
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .container {
@@ -11,6 +17,7 @@
     align-items: center;
 }
 
+/* ***** Slider items (images) ***** */
 .item {
     float: left;
     width: 700px;
@@ -55,6 +62,7 @@
     opacity: 1;
 }
 
+/* Buttons */
 .prev, .next {
     width: 20px;
     height: 20px;
