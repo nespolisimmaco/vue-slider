@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       activeItemIndex: 0,
+      myInterval: null,
       slides: [
         {
           image: "img/01.webp",
@@ -33,8 +34,13 @@ createApp({
       ],
     };
   },
+  mounted() {
+    this.myInterval = setInterval(this.nextImage, 3000);
+  },
   methods: {
     nextImage() {
+        clearInterval(this.myInterval);
+        this.myInterval = setInterval(this.nextImage, 3000);
         if (this.activeItemIndex < this.slides.length - 1) {
             this.activeItemIndex++;
         } else {
@@ -42,6 +48,8 @@ createApp({
         }
     },
     previousImage() {
+        clearInterval(this.myInterval);
+        this.myInterval = setInterval(this.nextImage, 3000);
         if (this.activeItemIndex === 0) {
             this.activeItemIndex = this.slides.length -1;
         } else {
