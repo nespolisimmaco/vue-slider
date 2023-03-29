@@ -39,8 +39,8 @@ createApp({
   },
   methods: {
     nextImage() {
-        clearInterval(this.myInterval);
-        this.myInterval = setInterval(this.nextImage, 3000);
+        this.stopAutoplay();
+        this.startAutoplay();
         if (this.activeItemIndex < this.slides.length - 1) {
             this.activeItemIndex++;
         } else {
@@ -48,8 +48,8 @@ createApp({
         }
     },
     previousImage() {
-        clearInterval(this.myInterval);
-        this.myInterval = setInterval(this.nextImage, 3000);
+        this.stopAutoplay();
+        this.startAutoplay();
         if (this.activeItemIndex === 0) {
             this.activeItemIndex = this.slides.length -1;
         } else {
@@ -58,6 +58,12 @@ createApp({
     },
     chooseImage(index) {
         this.activeItemIndex = index;
+    },
+    stopAutoplay() {
+      clearInterval(this.myInterval);
+    },
+    startAutoplay() {
+        this.myInterval = setInterval(this.nextImage, 3000);
     }
   },
 }).mount("#app");

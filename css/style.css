@@ -17,7 +17,7 @@ body {
     align-items: center;
 }
 
-/* ***** Slider items (images) ***** */
+/* ***** Slider items (images and thumbnails) ***** */
 .item {
     float: left;
     width: 700px;
